@@ -16,7 +16,7 @@ app.listen(port, () => {
 
 let scores = {
     level0: 5,
-    l1: 10,
+    level1: 10,
     level2: 25,
     level3: 45
 };
@@ -48,7 +48,7 @@ let score=0;
 
       let scores = {
           level0: 5,
-          l1: 10,
+          level1: 10,
           level2: 25,
           level3: 45
       };
@@ -63,7 +63,7 @@ let score=0;
                     let prs = res.data.items;
                     for (let i = 0; i < prs.length; i++) {
                         for (let j = 0; j < prs[i].labels.length; j++) {
-                            if (prs[i].labels[j].name.toLowerCase() === "level0" || prs[i].labels[j].name.toLowerCase() === "l1" || prs[i].labels[j].name.toLowerCase() === "level2" || prs[i].labels[j].name.toLowerCase() === "level3") {
+                            if (prs[i].labels[j].name.toLowerCase() === "level0" || prs[i].labels[j].name.toLowerCase() === "level1" || prs[i].labels[j].name.toLowerCase() === "level2" || prs[i].labels[j].name.toLowerCase() === "level3") {
                                 if (leaderboard[prs[i].user.login] === undefined) {
                                     leaderboard[prs[i].user.login] = {
                                         login: prs[i].user.login,
@@ -72,7 +72,7 @@ let score=0;
                                         profile_url: prs[i].user.html_url,
                                         pr_count: 1,
                                         level0: 0,
-                                        l1: 0,
+                                        level1: 0,
                                         level2: 0,
                                         level3: 0,
                                         pr_links: [],
@@ -85,8 +85,8 @@ let score=0;
                                 leaderboard[prs[i].user.login].pr_links.push(prs[i].html_url);
                                 if (prs[i].labels[j].name.toLowerCase() === "level0") {
                                     leaderboard[prs[i].user.login].level0+= 1;
-                                } else if (prs[i].labels[j].name.toLowerCase() === "l1") {
-                                    leaderboard[prs[i].user.login].l1 += 1
+                                } else if (prs[i].labels[j].name.toLowerCase() === "level1") {
+                                    leaderboard[prs[i].user.login].level1 += 1
                                 } else if (prs[i].labels[j].name.toLowerCase() === "level2") {
                                    leaderboard[prs[i].user.login].level2 += 1
                                }  else if (prs[i].labels[j].name.toLowerCase() === "level3") {
