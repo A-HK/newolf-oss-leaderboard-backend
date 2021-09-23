@@ -28,14 +28,14 @@ let timestamp;
 
 const octokit = new Octokit({ auth: `${process.env.TOKEN}` });
 
-
+/*
 
 const projects = [
 
     "Test-Tech-Matrix/Test-Repo-1",
     "Test-Tech-Matrix/Test-Repo-2"
 ];
-
+*/
 
 
 function updateleaderboard() {
@@ -54,7 +54,7 @@ let score=0;
       };
 
       octokit.request('GET /search/issues', {
-        q: 'is:pr+org:Test-Tech-Matrix+is:merged'
+        q: 'is:pr+org:Tech-Matrix+is:merged'
       })
         .then((res) => {
 
